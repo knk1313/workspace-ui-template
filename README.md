@@ -1,5 +1,7 @@
 # Workspace UI Template
 
+日本語 | [English](README.en.md)
+
 Vite + React + TypeScript + Tailwind CSS v4 で作った、管理画面向けのフロントエンドテンプレートです。
 画面に表示されるデータ・文章はすべて架空のサンプルです。API（Application Programming Interface）やバックエンドは含みません。
 
