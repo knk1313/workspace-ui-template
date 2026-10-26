@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* デザイントークン。
+   面は「薄いグレーの地(canvas) に 白いカード(surface)」で統一し、境界線は極力薄く。
+   選択状態は淡いブルーの pill にする。 */
+@theme {
+    /* 面 */
+    --color-canvas: #f7f9fc; /* アプリ全体・ヘッダー・サイドバー共通の地 */
+    --color-surface: #ffffff; /* カード・メニュー・ドロワー */
+    --color-surface-2: #eef1f6; /* hover / 淡い塗り */
+    --color-hairline: #e6e9ef; /* ごく薄い区切り線 */
+
+    /* テキスト */
+    --color-ink: #1f2430; /* 見出し・本文強 */
+    --color-muted: #5f6571; /* 補助テキスト */
+    --color-faint: #8b909b; /* さらに淡い・プレースホルダ */
+
+    /* ブランド／選択 */
+    --color-brand: #2563eb;
+    --color-brand-hover: #1d4ed8;
+    --color-nav-active: #dbe8ff; /* サイドバー選択の淡いブルー pill */
+    --color-nav-ink: #1b4bcf; /* 選択項目の文字/アイコン */
+
+    /* コントロール境界（入力/セレクト/チェックボックスの罫。hairline より一段濃い実線） */
+    --color-control-border: #dadce0;
+
+    /* 危険（削除・破棄）。filled=塗り / hover=塗りhover / surface=淡い面 / border=淡い罫 */
+    --color-danger: #dc2626;
+    --color-danger-hover: #b91c1c;
+    --color-danger-surface: #fef2f2;
+    --color-danger-border: #fecaca;
+
+    /* 塗りの上の文字（ブランド色・危険色で塗ったボタンなど） */
+    --color-on-brand: #ffffff;
+
+    /* ダーク面（左下スナックバー・選択アクションバー）と、その上の文字・アイコン */
+    --color-dark-surface: #2e3036;
+    --color-on-dark: #ffffff;
+    --color-on-dark-success: #34d399;
+    --color-on-dark-danger: #fca5a5;
+
+    /* 暗幕（モーダル・ドロワーの背面）。bg-scrim/40 のように不透明度を付けて使う */
+    --color-scrim: #000000;
+
+    /* 状態（StatusBadge などの意味色）。surface=淡い面 / ink=文字 */
+    --color-status-neutral-surface: #f3f4f6;
+    --color-status-neutral-ink: #4b5563;
+    --color-status-info-surface: #eff6ff;
+    --color-status-info-ink: #2563eb;
+    --color-status-success-surface: #f0fdf4;
+    --color-status-success-ink: #16a34a;
+    --color-status-warning-surface: #fffbeb;
+    --color-status-warning-ink: #d97706;
+    --color-status-danger-surface: #fef2f2;
+    --color-status-danger-ink: #dc2626;
+
+    /* 角丸 */
+    --radius-control: 12px; /* ボタン・入力・チップ */
+    --radius-surface: 16px; /* カード・パネル・メニュー */
+
+    /* 影（用途別。直値の散在を防ぐため意味で参照する） */
+    --shadow-control: 0 1px 2px 0 rgb(15 23 42 / 0.08); /* 塗りボタン */
+    --shadow-card: 0 2px 12px -4px rgb(15 23 42 / 0.16); /* カードのホバー */
+    --shadow-panel: 0 8px 30px -8px rgb(15 23 42 / 0.28); /* メニュー・ドロップダウン */
+    --shadow-bar: 0 8px 30px -8px rgb(15 23 42 / 0.4); /* 下部の選択アクションバー */
+    --shadow-toast: 0 6px 24px -6px rgb(0 0 0 / 0.45); /* スナックバー */
+
+    /* モーション（イージング）。ease-expo / ease-inout / ease-spring ユーティリティになる */
+    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1); /* 幅の展開・ラベル浮上 */
+    --ease-inout: cubic-bezier(0.65, 0, 0.35, 1); /* ピルのスライド */
+    --ease-spring: cubic-bezier(0.18, 1.25, 0.4, 1); /* トーストのオーバーシュート */
+}
+
+/* モーション過敏設定ではアニメーションを実質無効化する。 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+}
+
+/* クリックできるものは常に pointer にする（Tailwind v4 の button 既定は default のため）。
+   無効時は disabled:cursor-not-allowed 等の個別指定が優先される。 */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+select:not(:disabled),
+label[for],
+summary {
+    cursor: pointer;
+}
