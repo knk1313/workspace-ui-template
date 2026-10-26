@@ -3,6 +3,12 @@
 Vite + React + TypeScript + Tailwind CSS v4 で作った、管理画面向けのフロントエンドテンプレートです。
 画面に表示されるデータ・文章はすべて架空のサンプルです。API（Application Programming Interface）やバックエンドは含みません。
 
+![ダッシュボード](docs/screenshots/dashboard.png)
+
+| ドキュメント | 設定 |
+| --- | --- |
+| ![ドキュメント](docs/screenshots/documents.png) | ![設定](docs/screenshots/settings.png) |
+
 ## セットアップ
 
 Node.js 22.22.2 以上（22 系）、24.15.0 以上（24 系）、または 26 以上が必要です（`package.json` の `engines`）。推奨は LTS（Long Term Support、長期サポート版）の Node.js 24 です。`.nvmrc` にも Node.js 24 を指定しています。
