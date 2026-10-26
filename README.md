@@ -42,6 +42,7 @@ npm run build    # 本番ビルド（dist/）
 
 - ドキュメント画面: `src/pages/documents/` を消し、`navigation` と `pageByPath` から `/documents` を外す
 - ダッシュボードの中身: `src/pages/DashboardPage.tsx` を自分の画面に書き換える
+  - ダッシュボードの「ドキュメントを開く」ボタンは `/documents` に移動する。ドキュメント画面だけを消すと、このボタンは 404 画面に飛ぶ。型エラーにはならず `npm run check` でも見つからないので、ボタンも消すか移動先を変える
 - サンプルデータ: `CURRENT_USER` は `Header.tsx` と `SettingsPage.tsx` でも使っている。ログイン中のユーザー情報に置き換えてから `src/data/sample.ts` を消す
 - テスト: `src/pages/documents/DocumentsPage.test.tsx` と、ドキュメント画面を使っている `src/context/DisplaySettings.test.tsx` を書き換えるか消す
 
