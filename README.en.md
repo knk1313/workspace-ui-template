@@ -9,10 +9,6 @@ The UI labels are in Japanese. To change them, edit `src/app.config.ts` and the 
 
 ![Dashboard](docs/screenshots/dashboard.png)
 
-| Documents | Settings |
-| --- | --- |
-| ![Documents](docs/screenshots/documents.png) | ![Settings](docs/screenshots/settings.png) |
-
 ## Setup
 
 Requires Node.js 22.22.2+ (22.x), 24.15.0+ (24.x), or 26+ (see `engines` in `package.json`). Node.js 24 LTS is recommended and is specified in `.nvmrc`.
