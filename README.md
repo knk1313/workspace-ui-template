@@ -104,7 +104,3 @@ src/
 ├── data/sample.ts           # 架空のサンプルデータ
 └── lib/format.ts            # 日付フォーマット（ロケールとタイムゾーンを引数で受け取る）
 ```
-
-## ライセンス
-
-[MIT License](LICENSE)

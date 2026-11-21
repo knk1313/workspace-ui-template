@@ -106,7 +106,3 @@ src/
 ├── data/sample.ts           # fictional sample data
 └── lib/format.ts            # date formatting (takes locale and time zone as arguments)
 ```
-
-## License
-
-[MIT License](LICENSE)
